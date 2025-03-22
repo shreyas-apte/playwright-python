@@ -1,0 +1,17 @@
+sudo apt update
+sudo apt upgrade
+
+# Creating virtual environment with latest python version
+sudo apt install python3.12-venv
+python3 -m venv .venv312
+source .venv312/bin/activate
+deactivate
+
+# Creating virtual environment with older python versions
+# Older version needs to be installed in the system manually
+virtualenv -p python3.11 .venv311
+source .venv311/bin/activate
+
+pip install --upgrade pip
+pip install playwright boto3
+playwright install --with-deps --only-shell chromium
